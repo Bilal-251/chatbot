@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Scraped Data Dashboard</title>
+    <!-- Include necessary CSS and JS libraries for charts -->
+    <link rel="stylesheet" href="https://cdn.plot.ly/plotly-2.3.3.min.js">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, button {
+            padding: 8px;
+            margin-right: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        #charts-section {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        #average-price-chart,
+        #average-ratings-chart {
+            width: 45%;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Your Scraped Data Dashboard</h1>
+
+    <!-- Input field for querying data -->
+    <form method="GET" action="#">
+        <label for="query">Query Data:</label>
+        <input type="text" name="query" id="query">
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Total number of listings -->
+    <p>Total Number of Listings: 200</p>
+
+    <!-- Average product price -->
+    <p>Average Product Price: $50.00</p>
+
+    <!-- Average ratings of products -->
+    <p>Average Ratings of Products: 4.5</p>
+
+    <!-- Average review count per product -->
+    <p>Average Review Count per Product: 50</p>
+
+    <!-- Total number of questions asked -->
+    <p>Total Number of Questions Asked: 20</p>
+
+    <!-- Top 5 products based on defined criteria -->
+    <h2>Top 5 Products</h2>
+    
+    
+        
+    <ul>
+        <li>
+            <a href="#" target="_blank">Product 1</a>
+            - Rating: {{product.product_rating}} | Reviews: 120
+        </li>
+        <li>
+            <a href="#" target="_blank">Product 2</a>
+            - Rating: 4.5 | Reviews: 100
+        </li>
+        <li>
+            <a href="#" target="_blank">Product 3</a>
+            - Rating: 4.2 | Reviews: 90
+        </li>
+        <li>
+            <a href="#" target="_blank">Product 4</a>
+            - Rating: 4.0 | Reviews: 80
+        </li>
+        <li>
+            <a href="#" target="_blank">Product 5</a>
+            - Rating: 3.8 | Reviews: 70
+        </li>
+    </ul>
+
+    <!-- Charts section -->
+    <div id="charts-section">
+        <!-- Chart for average product price -->
+        <div id="average-price-chart"></div>
+
+        <!-- Chart for average ratings -->
+        <div id="average-ratings-chart"></div>
+
+        <!-- Additional charts can be added as needed -->
+    </div>
+
+    <!-- JavaScript libraries for charts -->
+    <script src="https://cdn.plot.ly/plotly-2.3.3.min.js"></script>
+    <!-- Include necessary JS scripts for interactive charts -->
+    <script>
+        // Example script for creating average price chart
+        var priceData = [{
+            x: ['Average Price'],
+            y: [50.00],
+            type: 'bar'
+        }];
+
+        Plotly.newPlot('average-price-chart', priceData);
+
+        // Similar scripts can be added for other charts
+    </script>
+</body>
+</html>

@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        /* Your existing styles */
+        :root {
+            --primaryColor: #808080;
+            --mainBlack: #222;
+            --mainWhite: #fff;
+            --offWhite: #f7f7f7;
+            --darkGrey: #afafaf;
+            --mainTransition: all 0.3s linear;
+            --mainSpacing: 0.2rem;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: var(--primaryColor);
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input {
+            width: 30%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        table {
+            
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        /* Cards section styles */
+        .title {
+            text-align: center;
+        }
+
+        .cards {
+            padding: 4rem 0;
+        }
+
+        .cards-center {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(4, 1fr); /* Change this line to specify the number of columns (in this case, 4) */
+}
+
+        .card {
+            background-color: #ddd;
+            margin-bottom: 3rem;
+            transition: var(--mainTransition);
+        }
+
+        .img-container {
+            overflow: hidden;
+            background: white;
+            height: 350px;
+        }
+
+        .table-container th, .table-container td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .card img {
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            background-size: contain;
+            height: 100%;
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .card:hover {
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+            transform: scale(1.05);
+        }
+
+        .card:hover .card {
+            transform: scale(1.3);
+        }
+
+        .card:hover img {
+            transform: scale(1.1);
+            opacity: 0.8;
+        }
+
+        .card-info {
+            padding: 1rem;
+            height: 130px;
+        }
+
+        .card {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto 1fr auto;
+        }
+
+        .cards-center {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(268.5px, 1fr));
+        }
+        button {
+            padding: 8px 16px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+        input {
+            
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-right: 5px;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Dashboard</h1>
+        <section>
+            <div id="chat-container">
+                <div id="chat-log"></div>
+                <input type="text" id="user-input" placeholder="Enter your Query....">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </section>
+        
+    </header>
+    <main>
+        
+
+        <section>
+            <h2>Summary</h2>
+            <table>
+                <tr>
+                    <th>Total number of listings</th>
+                    <td>200</td>
+                </tr>
+                <tr>
+                    <th>Average product price</th>
+                    <td>Rs.2000</td>
+                </tr>
+                <!-- Add more summary data -->
+            </table>
+        </section>
+<!-- cards -->
+<section class="cards">
+    <div class="title">
+        <h1>Top Rating Products</h1>
+    </div>
+    <div class="cards-center">
+        <!-- single card -->
+        <article class="card">
+            <div class="img-container">
+                <a href="https://www.daraz.pk/products/like-new-phones-used-apple-iphone-x-silver-256-gb-pta-approved-i435087172-s2088535157.html?spm=a2a0e.searchlist.sku.5.bcaf56190rm8Lp&search=1">
+
+                    <img src="https://static-01.daraz.pk/p/05960ed9511e7cdcc96a0f4a4796196e.jpg_750x750.jpg_.webp" alt="">
+                </a>
+            </div>
+            <!-- card info -->
+            <div class="card-info">
+                <h3>Rs. 106,999</h3>
+                <p>Model: Apple Model: iPhone X Battery Health - 80+ PTA Approved Storage: 256 GB Screen: 5.8-in. Super Retina HD Camera: 12MP Zoom 10x Video camera: 4K Zoom 6x Processor </p>
+            </div>
+        </article>
+        <!--end of single card -->
+        <!-- single card -->
+        <article class="card">
+            <div class="img-container">
+                <a href="https://www.daraz.pk/products/like-new-phones-used-apple-iphone-se-2nd-gen-2020-white-64-gb-pta-approved-i434305230-s2082863896.html?spm=a2a0e.searchlist.sku.25.bcaf56194YpO5W&search=1">
+
+                    <img src="https://static-01.daraz.pk/p/b6a977a91695c777549291e37e9a65ba.jpg_750x750.jpg_.webp" alt="">
+                </a>
+            </div>
+            <!-- card info -->
+            <div class="card-info">
+                <h3>Rs. 70,999</h3>
+                <p>Brand : Apple Model : iPhone SE Battery Health - 80+ PTA Approved Memory : 64 GB Screen : 4.7-in. Retina HD Camera: 12MP Zoom 5x Video camera : 4K Zoom 3x Date of manufacture </p>
+            </div>
+        </article>
+        <!--end of single card -->
+        <!-- single card -->
+        <article class="card">
+            <div class="img-container">
+                <a href="https://www.daraz.pk/products/20-8gb-ram-256gb-5000mah-pta-i432856844-s2101369194.html?spm=a2a0e.searchlist.sku.69.bcaf5619YHFj3S&search=1">
+
+                    <img src="https://static-01.daraz.pk/p/9cc2eef463d67a130c2a110b8bd63b2f.png_750x750.jpg_.webp" alt="">
+                </a>
+            </div>
+            <!-- card info -->
+            <div class="card-info">
+                <h3>Rs. 45,496</h3>
+                <p>Product details of Tecno CAMON 20 8GB RAM-256GB ROM 5000MAH BATTERY PTA APPROVED OFFICIAL BRAND WARRANTY</p>
+            </div>
+        </article>
+    </div>
+</section>
+<section class="cards">
+    <div class="title">
+        <h1>Top Seller Products</h1>
+    </div>
+    <div class="cards-center">
+        <!-- single card -->
+        <article class="card">
+            <div class="img-container">
+                <a href="https://www.daraz.pk/products/20-8gb-26gb-64-g99-1-mah-21-i433969037-s2095364064.html?spm=a2a0e.searchlist.sku.45.6f81431bxAOK61&search=1">
+
+                    <img src="https://static-01.daraz.pk/p/add8235792f75d2fbf05e43f92b8522a.jpg_750x750.jpg_.webp" alt="">
+                </a>
+            </div>
+            <!-- card info -->
+            <div class="card-info">
+                <h3>Rs. 61,999</h3>
+                <p>Tecno Camon 20 Pro 8GB 256GB | 64-megapixel primary camera | MediaTek G99 processor | 5000mAh battery | 1 Year Brand warranty </p>
+            </div>
+        </article>
+        <!--end of single card -->
+        <!-- single card -->
+        <article class="card">
+            <div class="img-container">
+                <a href="https://www.daraz.pk/products/12-8-gb-128-gb-8-mp-50-mp-8-mp-2-mp-2-mah-i436234825-s2094895832.html?spm=a2a0e.searchlist.sku.11.444163daXcjAZI&search=1">
+
+                    <img src="https://static-01.daraz.pk/p/8889e339d3723061c12b13da2adee1f6.png_750x750.jpg_.webp" alt="">
+                </a>
+            </div>
+            <!-- card info -->
+            <div class="card-info">
+                <h3>Rs. 45,999</h3>
+                <p>Xiaomi Redmi 12 RAM 8 GB ROM 128 GB Front Camera 8 MP Back Camera 50 MP + 8 MP + 2 MP Battery Type 5000 mAh </p>
+            </div>
+        </article>
+        <!--end of single card -->
+        <!-- single card -->
+        <article class="card">
+            <div class="img-container">
+                <a href="https://www.daraz.pk/products/a54-8-gb-256-gb-32-mp-12-mp-50-mp-5mp-li-po-5000-mah-i432035045-s2061168880.html?spm=a2a0e.searchlist.sku.7.67b65e08cqxZTR&search=1">
+
+                    <img src="https://static-01.daraz.pk/p/e5eb5190b50c275975a60a670434bb28.png_750x750.jpg_.webp" alt="">
+                </a>
+            </div>
+            <!-- card info -->
+            <div class="card-info">
+                <h3>Rs. 180,000</h3>
+                <p>Samsung Galaxy A54 RAM 8 GB ROM 256 GB Front Camera 32 MP Back Camera 12 MP + 50 MP + 5MP Battery Type Li-Po 5000 mAh, non-removable</p>
+            </div>
+        </article>
+        <!--end of single card -->
+        <!-- single card -->
+    </div>
+</section>
+<section class="cards">
+    <div class="title">
+        <h1>Top Free Shipping Delivery Products</h1>
+    </div>
+    <div class="cards-center">
+        <!-- single card -->
+        <article class="card">
+            <div class="img-container">
+                <a href="https://www.daraz.pk/products/2023-4gb-64gb-13-mp-5000mah-i432435083-s2081245640.html?spm=a2a0e.searchlist.sku.11.59c72241oKy7iH&search=1">
+
+                    <img src="https://static-01.daraz.pk/p/e804f9a11ed3b03c714df92fccebf108.jpg_750x750.jpg_.webp" alt="">
+                </a>
+            </div>
+            <!-- card info -->
+            <div class="card-info">
+                <h3>Rs. 25,999</h3>
+                <p>Tecno Spark Go 2023 , 4GB RAM 64GB ROM , Back Camera 13 MP , Fingersensor , 5000mAh Battery </p>
+            </div>
+        </article>
+        <!--end of single card -->
+        <!-- single card -->
+        <article class="card">
+            <div class="img-container">
+                <a href="https://www.daraz.pk/products/realme-narzo-50a-prime-4gb-128gb-pta-approved-with-official-1-year-warranty-i436801398-s2101274808.html?spm=a2a0e.searchlist.sku.13.4662431bdq9Txt&search=1">
+
+                    <img src="https://static-01.daraz.pk/p/71f68a3d84277321d1ce4511e1af8092.jpg_750x750.jpg_.webp" alt="">
+                </a>
+            </div>
+            <!-- card info -->
+            <div class="card-info">
+                <h3>Rs. 45,999</h3>
+                <p>Xiaomi Redmi 12 RAM 8 GB ROM 128 GB Front Camera 8 MP Back Camera 50 MP + 8 MP + 2 MP Battery Type 5000 mAh </p>
+            </div>
+        </article>
+        <!--end of single card -->
+        <!-- single card -->
+        <article class="card">
+            <div class="img-container">
+                <a href="https://www.daraz.pk/products/8gb-s23-128gb-50mp-5000mah-i429908133-s2048933084.html?spm=a2a0e.searchlist.sku.21.3e9a7882sI14hV&search=1">
+
+                    <img src="https://static-01.daraz.pk/p/0376286a3cc51b54039d7fd6e18f0e2b.png_750x750.jpg_.webp" alt="">
+                </a>
+            </div>
+            <!-- card info -->
+            <div class="card-info">
+                <h3>Rs. 30,299</h3>
+                <p>Itel S23 , 8GB RAM 128GB ROM , 50MP Main Camera , Fingerprint , 5000mAh Battery</p>
+            </div>
+        </article>
+        <!--end of single card -->
+    </div>
+</section>
+
+    </main>
+</head>
+<body>
+    
+
+    <script>
+        // Chatbot responses
+        const responses = {
+            'hello': 'Hello!',
+            'bye': 'See you!',
+            'how are you doing': "I'm doing fine, and you?",
+            'thanks': 'You\'re welcome!',
+            'i love code palace': 'Thank you!',
+            'who is your developer': 'Mr.Arslan Javed developed me',
+            'price expensive phone': 'Rs.267,000',
+            'price cheapest phone': 'Rs.13,999',
+            'give advice': 'If I were you, I would go to the internet and type exactly what you wrote there!',
+            'what you eat': "I don't like eating anything because I'm a bot obviously!",
+            'hows weather': "As an AI Bot I can't tell you present condition!",
+            'cheapest phone': 'Oppo A57 - 5.2 HD Display - 4GB RAM - 64GB ROM',
+            'expensive phone': 'Apple 14 pro max 128gb box pack',
+            'thank you': 'You are welcome!',
+            'best apple phone': 'Best Apple phone is Apple 14 pro max 128gb box pack'
+        };
+
+        function unknown() {
+            const responses = [
+                'Could you please re-phrase that?',
+                '...',
+                'Ummmm.',
+                'What does that mean?'
+            ];
+            return responses[Math.floor(Math.random() * responses.length)];
+        }
+
+        function messageProbability(userMessage, recognizedWords, singleResponse = false, requiredWords = []) {
+            let messageCertainty = 0;
+            let hasRequiredWords = true;
+
+            // Counts how many words are present in each predefined message
+            for (const word of userMessage) {
+                if (recognizedWords.includes(word)) {
+                    messageCertainty += 1;
+                }
+            }
+
+            // Calculates the percent of recognized words in a user message
+            const percentage = messageCertainty / recognizedWords.length;
+
+            // Checks that the required words are in the string
+            for (const word of requiredWords) {
+                if (!userMessage.includes(word)) {
+                    hasRequiredWords = false;
+                    break;
+                }
+            }
+
+            // Must either have the required words or be a single response
+            if (hasRequiredWords || singleResponse) {
+                return Math.floor(percentage * 100);
+            } else {
+                return 0;
+            }
+        }
+
+        function checkAllMessages(message) {
+            const highestProbList = {};
+
+            function response(botResponse, listOfWords, singleResponse = false, requiredWords = []) {
+                highestProbList[botResponse] = messageProbability(message, listOfWords, singleResponse, requiredWords);
+            }
+
+            // Responses
+            response('Hello!', ['hello', 'hi', 'hey', 'sup', 'heyo'], true);
+            response('See you!', ['bye', 'goodbye'], true);
+            response("I'm doing fine, and you?", ['how', 'are', 'you', 'doing'], false, ['how']);
+            response('You\'re welcome!', ['thanks'], true);
+            response('Thank you!', ['i', 'love', 'code', 'palace'], false, ['code', 'palace']);
+            response('Mr.Arslan Javed', ['who', 'is', 'your', 'developer'], false, ['your', 'developer']);
+           
+
+            // Longer responses
+            response("If I were you, I would go to the internet and type exactly what you wrote there!", ['give', 'advice'], false, ['advice']);
+            response("I don't like eating anything because I'm a bot, obviously!", ['what', 'you', 'eat'], false, ['you', 'eat']);
+            response("As an AI Bot, I can't tell you the present condition!", ['hows', 'weather'], false, ['weather']);
+            response('Oppo A57 - 5.2 HD Display - 4GB RAM - 64GB ROM', ['cheapest', 'phone'], false, ['cheapest', 'phone']);
+            response('Apple 14 pro max 128gb box pack', ['expensive', 'phone'], false, ['expensive', 'phone']);
+            response('You are welcome!', ['thank', 'you'], false, ['thank', 'you']);
+            response('Mr.Arslan Javed developed me', ['who', 'developed', 'you'], false, ['who', 'developed', 'you']);
+            response('Best Apple phone is Apple 14 pro max 128gb box pack', ['best', 'apple', 'phone'], false, ['best', 'apple', 'phone']);
+            response("Best Xiamo phone is Xiaomi Redmi Note 12 Pro RAM 8 GB ROM", ['best', 'xiaomi', 'phone'], false,['best', 'xiaomi', 'phone']);
+            response("Samsung Galaxy A54 RAM 8 GB ROM 256 GB", ['best', 'samsung', 'phone'], false,['best', 'samsung', 'phone']);
+            response("itel S23  HD+ Display | Up to 16+256GB Storage with  50 MP AI Camera", ['best', 'itel', 'phone'], false,['best', 'itel', 'phone']);
+            response("Vivo V29 12GB Ram 256GB Rom 6.78 Inches AMOLED Display , 4600 mAh ", ['best', 'vivo', 'phone'], false,['best', 'vivo', 'phone']);
+            response("Tecno Camon 20 , 8GB RAM 256GB ROM , 64MP Main Camera , Fingerprint , 5000mAh Fast Charging", ['best', 'tecno', 'phone'], false,['best', 'tecno', 'phone']);
+            response("Infinix Zero 30 4G RAM 8 GB ROM 256 GB Front Camera 50 MP", ['best', 'infinix', 'phone'], false,['best', 'infinix', 'phone']);
+            response('Rs.267,000', ['price', 'expensive', 'phone'], false, ['price', 'expensive', 'phone']);
+            response('Rs.13,999', ['price', 'cheapest', 'phone'], false, ['price', 'cheapest', 'phone']);            
+            response("Redmi A2 , Redmi 12C , itel A60s , Infinix Smart 7 , Sparx Neo X ,Oppo A57 ,Vivo Y85,Redmi A1 Plus,Nokia C31 ",["phone","under","30000"],false,["phone","under","30000"]);
+            response("Realme Narzo 50 A , Redmi A2 plus , infinix hot 30 , Itel S 23 , Infinix smart 7 ,Oppo A57 ,Vivo Y85,Nokia C31 ",["phone","under","45000"],false,["phone","under","45000"]);
+            response("Iphone X, Redmi Note 12, infinix note 30 pro , Samsung Galaxy A04 S, Iphone SE 2nd Generation,Samsung Galaxy A24 S,Iphone 14pro max",["phone","above","45000"],false,["phone","above","45000"]);
+            response("Realme Narzo 50 A , Redmi A2 plus , infinix hot 30 , Itel S 23 , Infinix smart 7 ,Oppo A57 ,Vivo Y85,Nokia C31 ",["phone","above","30000"],false,["phone","above","30000"]);
+            response(" Redmi Note 12, Redmi Note 12 pro, Samsung galaxy A04 S  , Sparks S3,Samsung galaxy A33,RedMi Note 12 S",["phone","4","rating"],false,["phone","4","rating"]);
+
+
+
+            const bestMatch = Object.keys(highestProbList).reduce((a, b) => highestProbList[a] > highestProbList[b] ? a : b);
+    return highestProbList[bestMatch] < 1 ? unknown() : bestMatch;
+}
+
+function handleKeyDown(event) {
+    if (event.key === 'Enter') {
+        sendMessage();
+    }
+}
+
+function getResponse(userInput) {
+    const splitMessage = userInput.toLowerCase().split(/\s+|[,;?!.-]\s*/);
+    return checkAllMessages(splitMessage);
+}
+
+function sendMessage() {
+    const userInput = document.getElementById('user-input').value;
+    document.getElementById('chat-log').innerHTML += `<p><strong>You:</strong> ${userInput}</p>`;
+    document.getElementById('user-input').value = '';
+
+    const botResponse = getResponse(userInput);
+    document.getElementById('chat-log').innerHTML += `<p><strong>Bot:</strong> ${botResponse}</p>`;
+}
+    </script>
+</body>
+</html>
